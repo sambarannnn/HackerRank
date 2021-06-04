@@ -20,7 +20,7 @@ class Result {
     public static long arrayManipulation(int n, List<List<Integer>> queries) {
     // Write your code here
         long arr[] = new long[n];
-        //instead of adding each element to the array, we add the element to the starting index and subtract it from the end's next index.
+        //instead of adding each element to the array, we add the element only to the              starting index and subtract it from the end's next index.
         //adds the value to starting index and deducts the value from end's next index
         for(List<Integer> query : queries) {
             arr[query.get(0)-1] += query.get(2);
