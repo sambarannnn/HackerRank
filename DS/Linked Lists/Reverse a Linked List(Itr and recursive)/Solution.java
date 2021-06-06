@@ -51,9 +51,23 @@ public class Solution {
             }
         }
     }
-
+    public static SinglyLinkedListNode recursivereverse(SinglyLinkedListNode curr) {
+        if(curr == null) {
+            return null;
+        } else if(curr.next == null) {
+            return curr;
+        } else {
+            SinglyLinkedListNode NextNode = curr.next;
+            curr.next = null;
+            SinglyLinkedListNode rest = recursivereverse(NextNode);
+            NextNode.next = curr;
+            return rest;
+        }
+    }
     public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
     // Write your code here
+    return recursivereverse(llist);
+        /*
         SinglyLinkedListNode p = llist;
         SinglyLinkedListNode q = null;
         SinglyLinkedListNode r = null;
@@ -65,6 +79,7 @@ public class Solution {
         }
         llist = q;
         return llist;
+        */
     }
 
     private static final Scanner scanner = new Scanner(System.in);
