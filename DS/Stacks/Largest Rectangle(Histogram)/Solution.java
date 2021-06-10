@@ -30,10 +30,9 @@ class Result {
                 st.push(i);
             }
         }
-        
         //left contains all the left limits per index
-        while(!st.empty())
-            st.pop();
+        //reuse same stack for tracking right limits
+        st.clear();
         //loop to fill in right limits, runs from last index to first
         for(int i = n-1; i >= 0; i--) {
             if(st.empty()) {
@@ -51,6 +50,7 @@ class Result {
             }
         }
         int max_area = 0;
+        //for each bar calculate area using left limit and right limit
         for(int i = 0; i < n; i++) {
             max_area = Math.max(max_area, h.get(i) * (right[i] -left[i] + 1));
         }
