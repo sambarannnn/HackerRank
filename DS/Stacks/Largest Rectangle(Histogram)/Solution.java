@@ -20,7 +20,7 @@ class Result {
                 left[i] = 0;//set ith location to 0 since thats the left limit
                 st.push(i);//push index into stack
             } else {
-                while(!st.empty() && h.get(st.peek()) >= h.get(i)) {//until you find a                                                smaller or equal height bar, keep popping
+                while(!st.empty() && h.get(st.peek()) >= h.get(i)) {//until you find a smaller or equal height bar, keep popping
                     st.pop();
                 }
                 if(st.empty())
