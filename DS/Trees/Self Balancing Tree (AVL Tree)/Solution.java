@@ -1,5 +1,7 @@
+	//NULL NODES HAVE -1 HEIGHT 
+	// LEAF NODES HAVE 0 HEIGHT
 	/* Class node is defined as :
-    class Node 
+    	class Node 
     	int val;	//Value
     	int ht;		//Height
     	Node left;	//Left child
@@ -69,11 +71,11 @@
         if(p != null && p.left != null)
             hl = p.left.ht;
         else
-            hl = -1;
+            hl = -1;//NULL NODE HT
         if(p != null && p.right != null)
             hr = p.right.ht;
         else
-            hr = -1;
+            hr = -1;//NULL NODE HT
         return hl - hr;
     }
 
@@ -83,11 +85,11 @@
         if(p != null && p.left != null)
             hl = p.left.ht;
         else
-            hl = -1;
+            hl = -1; //NULL NODE HT
         if(p != null && p.right != null)
                hr = p.right.ht;
         else
-            hr = -1;
+            hr = -1;//NULL NODE HT
         if(hl > hr)
             return hl + 1;
         else
@@ -99,7 +101,7 @@
         if(p == null) {
             temp = new Node();
             temp.val = val;
-            temp.ht = NodeHeight(temp);
+            temp.ht = 0;//LEAF NODE HEIGHT
             return temp;
         }
         if(val < p.val)
