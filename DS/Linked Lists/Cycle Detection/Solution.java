@@ -56,8 +56,6 @@ public class Solution {
     static boolean hasCycle(SinglyLinkedListNode head) {
         SinglyLinkedListNode p = head;
         SinglyLinkedListNode q = head;
-        //moving p by 2 indexes
-        //moving q by 1 index
         //if it has a cycle, it is bound to meet at some point
         while(p != null && q != null) {
             p = p.next;
